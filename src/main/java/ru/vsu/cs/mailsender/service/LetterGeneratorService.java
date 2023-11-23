@@ -25,22 +25,22 @@ public class LetterGeneratorService {
         mailMessage.setTo(messageDataDTO.getEmail());
 
         switch (type) {
-            case ACTIVATE_ACCOUNT:
-                mailMessage.setText(reader.readFile("activate_account.txt") + messageDataDTO.getData());
+            case ACTIVATE_ACCOUNT -> {
+                mailMessage.setText(reader.readFile("activate_account.txt") + "\n" + messageDataDTO.getData());
                 mailMessage.setSubject("Активация аккаунта");
-                break;
-            case CONFIRM_EMAIL:
-                mailMessage.setText(reader.readFile("confirm_email.txt") + messageDataDTO.getData());
+            }
+            case CONFIRM_EMAIL -> {
+                mailMessage.setText(reader.readFile("confirm_email.txt") + "\n" + messageDataDTO.getData());
                 mailMessage.setSubject("Подтверждение почты");
-                break;
-            case CHANGE_PASSWORD:
-                mailMessage.setText(reader.readFile("change_password.txt") + messageDataDTO.getData());
+            }
+            case CHANGE_PASSWORD -> {
+                mailMessage.setText(reader.readFile("change_password.txt") + "\n" + messageDataDTO.getData());
                 mailMessage.setSubject("Изменение пароля");
-                break;
-            case FORGET_PASSWORD:
-                mailMessage.setText(reader.readFile("forget_password.txt") + messageDataDTO.getData());
+            }
+            case FORGET_PASSWORD -> {
+                mailMessage.setText(reader.readFile("forget_password.txt") + "\n" + messageDataDTO.getData());
                 mailMessage.setSubject("Изменение пароля");
-                break;
+            }
         }
 
         return mailMessage;
