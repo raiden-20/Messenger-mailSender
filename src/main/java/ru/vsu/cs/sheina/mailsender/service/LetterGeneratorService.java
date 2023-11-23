@@ -1,13 +1,13 @@
-package ru.vsu.cs.mailsender.service;
+package ru.vsu.cs.sheina.mailsender.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
-import ru.vsu.cs.mailsender.dto.MessageDataDTO;
-import ru.vsu.cs.mailsender.dto.enums.TypeLetter;
-import ru.vsu.cs.mailsender.util.FileReader;
+import ru.vsu.cs.sheina.mailsender.dto.MessageDataDTO;
+import ru.vsu.cs.sheina.mailsender.dto.enums.TypeLetter;
+import ru.vsu.cs.sheina.mailsender.util.FileReader;
 
 @Service
 @RequiredArgsConstructor

@@ -1,4 +1,4 @@
-package ru.vsu.cs.mailsender.util;
+package ru.vsu.cs.sheina.mailsender.util;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.Resource;

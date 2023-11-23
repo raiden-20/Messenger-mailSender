@@ -1,10 +1,10 @@
-package ru.vsu.cs.mailsender.service;
+package ru.vsu.cs.sheina.mailsender.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
-import ru.vsu.cs.mailsender.dto.MessageDataDTO;
+import ru.vsu.cs.sheina.mailsender.dto.MessageDataDTO;
 
 @Service
 @RequiredArgsConstructor

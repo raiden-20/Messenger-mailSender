@@ -1,4 +1,4 @@
-package ru.vsu.cs.mailsender;
+package ru.vsu.cs.sheina.mailsender;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

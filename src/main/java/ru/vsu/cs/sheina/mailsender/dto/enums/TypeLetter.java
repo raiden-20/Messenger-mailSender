@@ -1,4 +1,4 @@
-package ru.vsu.cs.mailsender.dto.enums;
+package ru.vsu.cs.sheina.mailsender.dto.enums;
 
 public enum TypeLetter {
     ACTIVATE_ACCOUNT ("ACTIVATE_ACCOUNT"),

@@ -1,4 +1,4 @@
-package ru.vsu.cs.mailsender.dto;
+package ru.vsu.cs.sheina.mailsender.dto;
 
 import lombok.Getter;
 import lombok.Setter;
