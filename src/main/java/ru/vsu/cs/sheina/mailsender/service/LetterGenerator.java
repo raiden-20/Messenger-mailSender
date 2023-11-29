@@ -5,40 +5,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
-import ru.vsu.cs.sheina.mailsender.dto.MessageDataDTO;
+import ru.vsu.cs.sheina.mailsender.dto.MessageDTO;
 import ru.vsu.cs.sheina.mailsender.dto.enums.TypeLetter;
-import ru.vsu.cs.sheina.mailsender.util.FileReader;
+
+import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
-public class LetterGeneratorService {
+public class LetterGenerator {
 
     @Value("${spring.mail.username}")
     private String serverEmail;
-    @Autowired
-    private FileReader reader;
+    private final Map<TypeLetter, String> textStorage;
 
-    public SimpleMailMessage createLetter(MessageDataDTO messageDataDTO) {
-        TypeLetter type = TypeLetter.valueOf(messageDataDTO.getType());
+    public SimpleMailMessage createLetter(MessageDTO messageDTO) {
+        TypeLetter type = TypeLetter.valueOf(messageDTO.getType());
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom(serverEmail);
-        mailMessage.setTo(messageDataDTO.getEmail());
+        mailMessage.setTo(messageDTO.getEmail());
 
         switch (type) {
             case ACTIVATE_ACCOUNT -> {
-                mailMessage.setText(reader.readFile("activate_account.txt") + "\n" + messageDataDTO.getData());
+                mailMessage.setText(textStorage.get(TypeLetter.ACTIVATE_ACCOUNT));
                 mailMessage.setSubject("Активация аккаунта");
             }
             case CONFIRM_EMAIL -> {
-                mailMessage.setText(reader.readFile("confirm_email.txt") + "\n" + messageDataDTO.getData());
+                mailMessage.setText(textStorage.get(TypeLetter.CONFIRM_EMAIL));
                 mailMessage.setSubject("Подтверждение почты");
             }
             case CHANGE_PASSWORD -> {
-                mailMessage.setText(reader.readFile("change_password.txt") + "\n" + messageDataDTO.getData());
+                mailMessage.setText(textStorage.get(TypeLetter.CHANGE_PASSWORD));
                 mailMessage.setSubject("Изменение пароля");
             }
             case FORGET_PASSWORD -> {
-                mailMessage.setText(reader.readFile("forget_password.txt") + "\n" + messageDataDTO.getData());
+                mailMessage.setText(textStorage.get(TypeLetter.FORGET_PASSWORD));
                 mailMessage.setSubject("Изменение пароля");
             }
         }

@@ -4,18 +4,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
-import ru.vsu.cs.sheina.mailsender.dto.MessageDataDTO;
+import ru.vsu.cs.sheina.mailsender.dto.MessageDTO;
 
 @Service
 @RequiredArgsConstructor
 public class MailSendingService {
 
     private final JavaMailSender javaMailSender;
-    private final LetterGeneratorService letterGenerator;
+    private final LetterGenerator letterGenerator;
 
 
-    public void send(MessageDataDTO messageDataDTO) {
-        SimpleMailMessage mailMessage = letterGenerator.createLetter(messageDataDTO);
+    public void send(MessageDTO messageDTO) {
+        SimpleMailMessage mailMessage = letterGenerator.createLetter(messageDTO);
         javaMailSender.send(mailMessage);
     }
 }

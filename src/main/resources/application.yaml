@@ -1,0 +1,15 @@
+server:
+  port: 8001
+
+spring:
+  mail:
+    host: smtp.yandex.ru
+    port: 465
+    protocol: smtps
+    username: username
+    password: password
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: username
+    password: password
