@@ -9,7 +9,7 @@ spring:
     username: username
     password: password
   rabbitmq:
-    host: localhost
+    host: rabbitmq
     port: 5672
     username: rmuser
     password: rmpassword
