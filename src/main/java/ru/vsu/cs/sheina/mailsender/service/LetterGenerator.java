@@ -26,19 +26,19 @@ public class LetterGenerator {
 
         switch (type) {
             case ACTIVATE_ACCOUNT -> {
-                mailMessage.setText(textStorage.get(TypeLetter.ACTIVATE_ACCOUNT) + "/n" + messageDTO.getData());
+                mailMessage.setText(textStorage.get(TypeLetter.ACTIVATE_ACCOUNT) + "\n" + messageDTO.getData());
                 mailMessage.setSubject("Активация аккаунта");
             }
             case CONFIRM_EMAIL -> {
-                mailMessage.setText(textStorage.get(TypeLetter.CONFIRM_EMAIL) + "/n" + messageDTO.getData());
+                mailMessage.setText(textStorage.get(TypeLetter.CONFIRM_EMAIL) + "\n" + messageDTO.getData());
                 mailMessage.setSubject("Подтверждение почты");
             }
             case CHANGE_PASSWORD -> {
-                mailMessage.setText(textStorage.get(TypeLetter.CHANGE_PASSWORD) + "/n" + messageDTO.getData());
+                mailMessage.setText(textStorage.get(TypeLetter.CHANGE_PASSWORD) + "\n" + messageDTO.getData());
                 mailMessage.setSubject("Изменение пароля");
             }
             case FORGET_PASSWORD -> {
-                mailMessage.setText(textStorage.get(TypeLetter.FORGET_PASSWORD) + "/n" + messageDTO.getData());
+                mailMessage.setText(textStorage.get(TypeLetter.FORGET_PASSWORD) + "\n" + messageDTO.getData());
                 mailMessage.setSubject("Изменение пароля");
             }
         }
