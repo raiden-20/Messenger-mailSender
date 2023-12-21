@@ -5,8 +5,8 @@ spring:
     host: smtp.yandex.ru
     port: 465
     protocol: smtps
-    username: username
-    password: password
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
   rabbitmq:
     host: ${RABBITMQ_HOST}
     port: ${RABBITMQ_PORT}
