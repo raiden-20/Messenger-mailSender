@@ -1,6 +1,5 @@
 server:
-  port: 8001
-
+  port: 8080
 spring:
   mail:
     host: smtp.yandex.ru
@@ -9,7 +8,7 @@ spring:
     username: username
     password: password
   rabbitmq:
-    host: rabbitmq
-    port: 5672
-    username: rmuser
-    password: rmpassword
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USER}
+    password: ${RABBITMQ_PASS}
